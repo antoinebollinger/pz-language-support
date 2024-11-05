@@ -1,0 +1,61 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "partez",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "source.php"
+		},
+		{
+			"include": "text.html.basic"
+		},
+		{
+			"include": "text.html.twig"
+		},
+		{
+			"begin": "{% raw %}",
+			"end": "{% endraw %}",
+			"patterns": [
+				{
+					"include": "text.html.basic"
+				}
+			]
+		},
+		{
+			"begin": "{% if",
+			"end": "%}",
+			"patterns": [
+				{
+					"include": "text.html.basic"
+				}
+			]
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.pz",
+					"match": "\\b(if|while|for|return)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.pz",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.pz",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.pz"
+}

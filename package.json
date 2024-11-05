@@ -1,0 +1,51 @@
+{
+    "name": "pz-language-support",
+    "displayName": "PZ Language Support",
+    "description": "",
+    "version": "0.0.2",
+    "publisher": "partez.net",
+    "repository": {
+        "origin": "https://github.com/antoinebollinger/pz-language-support.git"
+    },
+    "engines": {
+        "vscode": "^1.95.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "pz",
+                "aliases": [
+                    "partez",
+                    "pz"
+                ],
+                "extensions": [
+                    ".pz"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "pz",
+                "scopeName": "source.pz",
+                "path": "./syntaxes/pz.tmLanguage.json",
+                "embeddedLanguages": {
+                    "source.php": "php",
+                    "text.html.basic": "html",
+                    "text.html.twig": "twig"
+                }
+            }
+        ]
+    },
+    "extensionDependencies": [
+        "mblode.twig-language-2"
+    ],
+    "devDependencies": {
+        "@types/vscode": "^1.70.0",
+        "typescript": "^4.7.0",
+        "vsce": "^2.6.7"
+    }
+}
